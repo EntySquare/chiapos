@@ -25,6 +25,7 @@
 #include "verifier.hpp"
 #include "../lib/bls-signatures/src/bls.hpp"
 
+
 using std::string;
 using std::vector;
 using std::endl;
@@ -137,6 +138,25 @@ int main(int argc, char *argv[]) try {
         vector<uint8_t> seed ;
         Random(seed,n,0,256);
         bls::PrivateKey sk = bls::AugSchemeMPL().KeyGen(seed);
+//  The plot public key is the combination of the harvester and farmer keys
+//  The plot id is based on the harvester, farmer, and pool keys
+//  The plot meno : pool_public_key, farmer_public_key, sk
+        uint32_t derivePath[4];
+        derivePath[0] = 12381;
+        derivePath[1] = 8844;
+        derivePath[2] = 3;
+        derivePath[3] = 0;
+        for(int i=0;i<4;i++) {
+            sk = bls::AugSchemeMPL().DeriveChildSk(sk,i);
+        }
+        bls::G1Element localSk = sk.GetG1Element();
+        std::vector<uint8_t> farmerArray(48);
+        HexToBytes(farmer_public_key,farmerArray.data());
+        bls::G1Element farmerPublicKey = bls::G1Element().FromByteVector(farmerArray);
+        std::vector<uint8_t> poolArray(48);
+        HexToBytes(farmer_public_key,poolArray.data());
+        bls::G1Element poolPublicKey = bls::G1Element().FromByteVector(poolArray);
+
         id = Strip0x(id);
         if (id.size() != 64) {
             cout << "Invalid ID, should be 32 bytes (hex)" << endl;
