@@ -12,30 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <ctime>
-#include <set>
-#include <iostream>
 #include <cstdlib>
+#include <ctime>
+#include <iostream>
+#include <set>
 
-
-#include "cxxopts.hpp"
+#include "../lib/bls-signatures/src/bls.hpp"
 #include "../lib/include/picosha2.hpp"
+#include "cxxopts.hpp"
 #include "plotter_disk.hpp"
 #include "prover_disk.hpp"
 #include "verifier.hpp"
-#include "../lib/bls-signatures/src/bls.hpp"
 
-
+using std::cout;
+using std::endl;
 using std::string;
 using std::vector;
-using std::endl;
-using std::cout;
+using namespace bls;
 
-void Random(std::vector<uint8_t> v,int n,int l,int r)//生成范围在l~r的随机数
+void Random(std::vector<uint8_t> v, int n, int l, int r)  //生成范围在l~r的随机数
 {
     srand(time(0));  //设置时间种子
-    for(int i=0;i<n;i++){
-        v.push_back(rand()%(r-l+1)+l);//生成区间r~l的随机数
+    for (int i = 0; i < n; i++) {
+        v.push_back(rand() % (r - l + 1) + l);  //生成区间r~l的随机数
     }
 }
 
@@ -76,11 +75,11 @@ void HelpAndQuit(cxxopts::Options options)
     exit(0);
 }
 
-int main(int argc, char *argv[]) try {
+int main(int argc, char *argv[])
+try {
     cxxopts::Options options(
         "ProofOfSpace", "Utility for plotting, generating and verifying proofs of space.");
-    options.positional_help("(create/prove/verify/check) param1 param2 ")
-        .show_positional_help();
+    options.positional_help("(create/prove/verify/check) param1 param2 ").show_positional_help();
 
     // Default values
     uint8_t k = 32;
@@ -134,30 +133,33 @@ int main(int argc, char *argv[]) try {
         cout << "Generating plot for k=" << static_cast<int>(k) << " filename=" << filename
              << " id=" << id << endl
              << endl;
-        int n=32;//数组元素的个数，即生成随机数的个数
-        vector<uint8_t> seed ;
-        Random(seed,n,0,256);
+        int n = 32;  //数组元素的个数，即生成随机数的个数
+        vector<uint8_t> seed;
+        Random(seed, n, 0, 256);
         bls::PrivateKey sk = bls::AugSchemeMPL().KeyGen(seed);
-//  The plot public key is the combination of the harvester and farmer keys
-//  The plot id is based on the harvester, farmer, and pool keys
-//  The plot meno : pool_public_key, farmer_public_key, sk
+        //  The plot public key is the combination of the harvester and farmer keys
+        //  The plot id is based on the harvester, farmer, and pool keys
+        //  The plot meno : pool_public_key, farmer_public_key, sk
         uint32_t derivePath[4];
         derivePath[0] = 12381;
         derivePath[1] = 8844;
         derivePath[2] = 3;
         derivePath[3] = 0;
-        for(int i=0;i<4;i++) {
-            sk = bls::AugSchemeMPL().DeriveChildSk(sk,i);
+        for (int i = 0; i < 4; i++) {
+            sk = bls::AugSchemeMPL().DeriveChildSk(sk, i);
         }
         bls::G1Element localSk = sk.GetG1Element();
         std::vector<uint8_t> farmerArray(48);
-        HexToBytes(farmer_public_key,farmerArray.data());
-        bls::G1Element farmerPublicKey = bls::G1Element().FromByteVector(farmerArray);
+        HexToBytes(farmer_public_key, farmerArray.data());
+        bls::G1Element farmerPublicKey = bls::G1Element::FromByteVector(farmerArray);
         std::vector<uint8_t> poolArray(48);
-        HexToBytes(farmer_public_key,poolArray.data());
-        bls::G1Element poolPublicKey = bls::G1Element().FromByteVector(poolArray);
-
-        id = Strip0x(id);
+        HexToBytes(farmer_public_key, poolArray.data());
+        bls::G1Element poolPublicKey = bls::G1Element::FromByteVector(poolArray);
+        bls::G1Element plotPublicKey = localSk + farmerPublicKey;
+        vector<uint8_t> msg;
+        msg.insert(msg.end(), poolPublicKey.Serialize().begin(), poolPublicKey.Serialize().end());
+        msg.insert(msg.end(), plotPublicKey.Serialize().begin(), plotPublicKey.Serialize().end());
+        //uint8_t output[BLS::MESSAGE_HASH_LEN];
         if (id.size() != 64) {
             cout << "Invalid ID, should be 32 bytes (hex)" << endl;
             exit(1);
@@ -169,41 +171,44 @@ int main(int argc, char *argv[]) try {
         }
         std::vector<uint8_t> memo_bytes(memo.size() / 2);
         std::array<uint8_t, 32> id_bytes;
+        bls::Util::Hash256(id_bytes.data(), (const uint8_t *)msg.data(), msg.size());
         HexToBytes(memo, memo_bytes.data());
-        HexToBytes(id, id_bytes.data());
+                   // HexToBytes(id, id_bytes.data());
         std::stringstream ss;
         ss << static_cast<int>(k);
         std::string kStr;
         ss >> kStr;
         time_t timep;
-        time (&timep);
+        time(&timep);
         char dt_string[64];
-        strftime(dt_string, sizeof(dt_string), "%Y-%m-%d-%H-%M",localtime(&timep) );
-//        std::string idStr((char *) id_bytes.data());
-        filename = "plot-k"+kStr+"-"+dt_string+"-"+ id +".plot";
-        cout << "tempdir=" << tempdir << ";tempdir2=" << tempdir2 << ";finaldir=" << finaldir << ";k=" \
-             << static_cast<int>(k) << ";memo=" << memo << ";id=" << id << ";buffmegabytes=" \
-             << static_cast<int>(buffmegabytes) << ";num_buckets=" << static_cast<int>(num_buckets) \
-             << ";num_stripes" << static_cast<int>(num_stripes) << ";num_threads=" \
-             << static_cast<int>(num_threads) << ";nobitfield=" << static_cast<bool>(nobitfield) \
-             << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename << endl;
+        strftime(dt_string, sizeof(dt_string), "%Y-%m-%d-%H-%M", localtime(&timep));
+        //        std::string idStr((char *) id_bytes.data());
+        filename = "plot-k" + kStr + "-" + dt_string + "-" + id + ".plot";
+        cout << "tempdir=" << tempdir << ";tempdir2=" << tempdir2 << ";finaldir=" << finaldir
+             << ";k=" << static_cast<int>(k) << ";memo=" << memo << ";id=" << id
+             << ";buffmegabytes=" << static_cast<int>(buffmegabytes)
+             << ";num_buckets=" << static_cast<int>(num_buckets) << ";num_stripes"
+             << static_cast<int>(num_stripes) << ";num_threads=" << static_cast<int>(num_threads)
+             << ";nobitfield=" << static_cast<bool>(nobitfield)
+             << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename
+             << endl;
 //        DiskPlotter plotter = DiskPlotter();
 //        plotter.CreatePlotDisk(
-//                tempdir,
-//                tempdir,
-//                finaldir,
-//                filename,
-//                k,
-//                memo_bytes.data(),
-//                memo_bytes.size(),
-//                id_bytes.data(),
-//                id_bytes.size(),
-//                buffmegabytes,
-//                num_buckets,
-//                num_stripes,
-//                num_threads,
-//                nobitfield,
-//                show_progress);
+//            tempdir,
+//            tempdir,
+//            finaldir,
+//            filename,
+//            k,
+//            memo_bytes.data(),
+//            memo_bytes.size(),
+//            id_bytes.data(),
+//            id_bytes.size(),
+//            buffmegabytes,
+//            num_buckets,
+//            num_stripes,
+//            num_threads,
+//            nobitfield,
+//            show_progress);
     }
     return 0;
 } catch (const cxxopts::OptionException &e) {

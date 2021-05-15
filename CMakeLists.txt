@@ -54,6 +54,8 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/src
   ${CMAKE_CURRENT_SOURCE_DIR}/test
   ${CMAKE_CURRENT_SOURCE_DIR}/plotter
+  ${CMAKE_CURRENT_SOURCE_DIR}/lib/bls-signatures/build/_deps/relic-build/include
+  ${CMAKE_CURRENT_SOURCE_DIR}/lib/bls-signatures/build/_deps/relic-src/include
   )
 
 add_library(fse ${FSE_FILES})
@@ -181,6 +183,7 @@ elseif (MSVC)
 else()
   target_link_libraries(chiapos PRIVATE fse stdc++fs Threads::Threads)
   target_link_libraries(ProofOfSpace fse stdc++fs Threads::Threads)
+  target_link_libraries(Plotter fse stdc++fs Threads::Threads)
   target_link_libraries(RunTests fse stdc++fs Threads::Threads)
 endif()
 
