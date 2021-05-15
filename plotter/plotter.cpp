@@ -133,7 +133,9 @@ int main(int argc, char *argv[]) try {
 
         HexToBytes(memo, memo_bytes.data());
         HexToBytes(id, id_bytes.data());
-
+        std::string kStr( (char *) k);
+        std::string idStr((char *) id_bytes.data());
+        filename = "plot-k"+kStr+"-"+ idStr +".plot";
         DiskPlotter plotter = DiskPlotter();
         plotter.CreatePlotDisk(
                 tempdir,
