@@ -53,6 +53,7 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/../lib/FiniteStateEntropy/lib
   ${CMAKE_CURRENT_SOURCE_DIR}/src
   ${CMAKE_CURRENT_SOURCE_DIR}/test
+  ${CMAKE_CURRENT_SOURCE_DIR}/plotter
   )
 
 add_library(fse ${FSE_FILES})
@@ -138,6 +139,12 @@ add_executable(ProofOfSpace
     ${BLAKE3_SRC}
 )
 
+add_executable(Plotter
+        plotter/plotter.cpp
+        src/chacha8.c
+        ${BLAKE3_SRC}
+)
+
 add_executable(RunTests
     tests/test-main.cpp
     tests/test.cpp
@@ -157,6 +164,7 @@ target_compile_features(RunTests PUBLIC cxx_std_17)
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
   target_link_libraries(chiapos PRIVATE fse Threads::Threads)
   target_link_libraries(ProofOfSpace fse Threads::Threads)
+  target_link_libraries(Plotter fse Threads::Threads)
   target_link_libraries(RunTests fse Threads::Threads)
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
   target_link_libraries(chiapos PRIVATE fse Threads::Threads)
