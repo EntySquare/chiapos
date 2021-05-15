@@ -14,17 +14,29 @@
 
 #include <ctime>
 #include <set>
+#include <iostream>
+#include <cstdlib>
+
 
 #include "cxxopts.hpp"
 #include "../lib/include/picosha2.hpp"
 #include "plotter_disk.hpp"
 #include "prover_disk.hpp"
 #include "verifier.hpp"
+#include "../lib/bls-signatures/src/bls.hpp"
 
 using std::string;
 using std::vector;
 using std::endl;
 using std::cout;
+
+void Random(std::vector<uint8_t> v,int n,int l,int r)//生成范围在l~r的随机数
+{
+    srand(time(0));  //设置时间种子
+    for(int i=0;i<n;i++){
+        v.push_back(rand()%(r-l+1)+l);//生成区间r~l的随机数
+    }
+}
 
 void HexToBytes(const string &hex, uint8_t *result)
 {
@@ -71,9 +83,9 @@ int main(int argc, char *argv[]) try {
 
     // Default values
     uint8_t k = 32;
-    uint32_t num_buckets = 0;
-    uint32_t num_stripes = 0;
-    uint8_t num_threads = 0;
+    uint32_t num_buckets = 128;
+    uint32_t num_stripes = 65536;
+    uint8_t num_threads = 2;
     string filename = "plot.dat";
     string tempdir = ".";
     string tempdir2 = ".";
@@ -81,10 +93,11 @@ int main(int argc, char *argv[]) try {
     string operation = "help";
     string memo = "0102030405";
     string id = "022fb42c08c12de3a6af053880199806532e79515f94e83461612101f9412f9e";
+    string farmer_public_key = "";
+    string pool_public_key = "";
     bool nobitfield = false;
     bool show_progress = false;
-    uint32_t buffmegabytes = 0;
-
+    uint32_t buffmegabytes = 3389;
     options.allow_unrecognised_options().add_options()(
             "k, size", "Plot size", cxxopts::value<uint8_t>(k))(
             "r, threads", "Number of threads", cxxopts::value<uint8_t>(num_threads))(
@@ -94,6 +107,8 @@ int main(int argc, char *argv[]) try {
         "2, tempdir2", "Second Temporary directory", cxxopts::value<string>(tempdir2))(
         "d, finaldir", "Final directory", cxxopts::value<string>(finaldir))(
         "f, file", "Filename", cxxopts::value<string>(filename))(
+        "F, farmer_public_key", "Farmer Public Key", cxxopts::value<string>(farmer_public_key))(
+        "P, pool_public_key", "Pool Public Key", cxxopts::value<string>(pool_public_key))(
         "m, memo", "Memo to insert into the plot", cxxopts::value<string>(memo))(
         "i, id", "Unique 32-byte seed for the plot", cxxopts::value<string>(id))(
         "e, nobitfield", "Disable bitfield", cxxopts::value<bool>(nobitfield))(
@@ -118,6 +133,10 @@ int main(int argc, char *argv[]) try {
         cout << "Generating plot for k=" << static_cast<int>(k) << " filename=" << filename
              << " id=" << id << endl
              << endl;
+        int n=32;//数组元素的个数，即生成随机数的个数
+        vector<uint8_t> seed ;
+        Random(seed,n,0,256);
+        bls::PrivateKey sk = bls::AugSchemeMPL().KeyGen(seed);
         id = Strip0x(id);
         if (id.size() != 64) {
             cout << "Invalid ID, should be 32 bytes (hex)" << endl;
@@ -130,7 +149,6 @@ int main(int argc, char *argv[]) try {
         }
         std::vector<uint8_t> memo_bytes(memo.size() / 2);
         std::array<uint8_t, 32> id_bytes;
-
         HexToBytes(memo, memo_bytes.data());
         HexToBytes(id, id_bytes.data());
         std::stringstream ss;

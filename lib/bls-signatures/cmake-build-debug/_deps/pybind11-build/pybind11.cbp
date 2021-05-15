@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="pybind11"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;CMake Files\src\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\_deps\;CMake Files\cmake-build-debug\_deps\relic-src\;CMake Files\cmake-build-debug\_deps\relic-src\cmake\;CMake Files\cmake-build-debug\_deps\relic-src\include\;CMake Files\cmake-build-debug\_deps\relic-src\src\;CMake Files\cmake-build-debug\_deps\pybind11-src\;CMake Files\cmake-build-debug\_deps\pybind11-src\tools\;CMake Files\python-bindings\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-build"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-build/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake_modules/Findgmp.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake_modules/Findsodium.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/arch.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/bn.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/cp.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/eb.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/ec.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/ed.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/ep.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/err.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/fb.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/fp.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/fpx.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/md.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/pp.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/rand.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/with.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include/relic_conf.h.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\include\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\src\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\pybind11-src\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/tools/FindPythonLibsNew.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\pybind11-src\tools\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/tools/pybind11Common.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\pybind11-src\tools\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/tools/pybind11Tools.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\pybind11-src\tools\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/python-bindings/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\python-bindings\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

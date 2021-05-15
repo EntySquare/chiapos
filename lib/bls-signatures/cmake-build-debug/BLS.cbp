@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="BLS"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;CMake Files\src\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\_deps\;CMake Files\cmake-build-debug\_deps\relic-src\;CMake Files\cmake-build-debug\_deps\relic-src\cmake\;CMake Files\cmake-build-debug\_deps\relic-src\include\;CMake Files\cmake-build-debug\_deps\relic-src\src\;CMake Files\cmake-build-debug\_deps\pybind11-src\;CMake Files\cmake-build-debug\_deps\pybind11-src\tools\;CMake Files\python-bindings\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bls">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/libbls.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/../contrib/catch"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 bls"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bls/fast">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/libbls.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/../contrib/catch"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 bls/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="runtest">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/runtest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/../contrib/catch"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 runtest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="runtest/fast">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/runtest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/../contrib/catch"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 runtest/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="combined_custom">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 combined_custom"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="blstmp">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/libblstmp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/../contrib/catch"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 blstmp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="blstmp/fast">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/libblstmp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/../contrib/catch"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 blstmp/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="runbench">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/runbench" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/../contrib/catch"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 runbench"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="runbench/fast">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/runbench" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/../contrib/catch"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 runbench/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="relic_s">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/lib/librelic_s.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include/low"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/tmpl"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 relic_s"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="relic_s/fast">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/lib/librelic_s.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include/low"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/tmpl"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 relic_s/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="arith_objs">
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 arith_objs"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="blspy">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/blspy.cpython-37m-darwin.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/python-bindings/../contrib/catch"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/include"/>
+					<Add directory="/Library/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/Makefile&quot;  VERBOSE=1 blspy"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="blspy/fast">
+				<Option output="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/blspy.cpython-37m-darwin.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build/include"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/python-bindings/../contrib/catch"/>
+					<Add directory="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/include"/>
+					<Add directory="/Library/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/Makefile&quot;  VERBOSE=1 blspy/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/python-bindings/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/arch/relic_arch_x64.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bc/relic_bc_aes.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bc/rijndael-alg-fst.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bc/rijndael-alg-fst.h">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bc/rijndael-api-fst.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bc/rijndael-api-fst.h">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_add.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_cmp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_div.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_factor.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_gcd.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_inv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_lcm.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_mem.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_mod.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_mxp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_prime.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_rec.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_shift.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_smb.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_srt.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/bn/relic_bn_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_bbs.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_bdpe.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_bgn.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_bls.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_cls.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_cmlhs.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_ecdh.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_ecdsa.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_ecies.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_ecmqv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_ecss.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_ghpe.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_ibe.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_mklhs.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_mpss.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_phpe.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_pss.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_rabin.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_rsa.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_sokaka.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_vbnn.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/cp/relic_cp_zss.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/dv/relic_dv_mem.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/dv/relic_dv_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_add.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_cmp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_curve.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_dbl.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_frb.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_hlv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_map.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_mul_fix.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_mul_sim.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_neg.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_norm.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_param.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_pck.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/eb/relic_eb_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_add.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_cmp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_curve.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_dbl.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_map.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_mul_fix.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_mul_sim.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_neg.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_norm.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_param.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_pck.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ed/relic_ed_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_add.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_cmp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_curve.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_dbl.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_map.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_mul_fix.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_mul_sim.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_neg.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_norm.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_param.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_pck.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_psi.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/ep/relic_ep_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_add.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_cmp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_curve.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_dbl.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_frb.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_map.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_mul_cof.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_mul_fix.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_mul_sim.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_neg.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_norm.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_pck.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/epx/relic_ep2_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_add.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_cmp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_exp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_inv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_itr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_param.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_poly.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_rdc.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_shift.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_slv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_srt.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_trc.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fb/relic_fb_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fbx/relic_fb2_inv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fbx/relic_fb2_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fbx/relic_fb2_slv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fbx/relic_fb2_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_add.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_cmp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_exp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_inv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_param.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_prime.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_rdc.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_shift.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_srt.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fp/relic_fp_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp12_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp12_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp18_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp18_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp24_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp24_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp2_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp2_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp3_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp3_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp48_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp48_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp4_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp4_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp54_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp54_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp6_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp6_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp8_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp8_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp9_mul.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fp9_sqr.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_add.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_cmp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_cyc.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_exp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_field.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_frb.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_inv.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_pck.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_rdc.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_srt.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/fpx/relic_fpx_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_bn_add_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_bn_div_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_bn_mod_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_bn_mul_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_bn_shift_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_bn_sqr_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_add_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_inv_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_itr_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_mul_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_rdc_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_shift_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_slv_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_sqr_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_srt_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fb_trc_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fp_add_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fp_inv_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fp_mul_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fp_rdc_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fp_shift_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fp_sqr_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fpx_add_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fpx_mul_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fpx_rdc_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/low/easy/relic_fpx_sqr_low.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/blake2s-ref.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_blake2s.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_hmac.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_kdf.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_mgf.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_sha224.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_sha256.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_sha384.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_sha512.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/relic_md_xmd.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/sha224-256.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/md/sha384-512.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/mpc/relic_mt_mpc.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/mpc/relic_pc_mpc.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pc/relic_pc_core.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pc/relic_pc_exp.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pc/relic_pc_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_add_k12.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_add_k2.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_add_k48.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_add_k54.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_add_k8.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_dbl_k12.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_dbl_k2.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_dbl_k48.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_dbl_k54.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_dbl_k8.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_exp_k12.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_exp_k2.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_exp_k48.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_exp_k54.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_exp_k8.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_map.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_map_k12.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_map_k2.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_map_k48.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_map_k54.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_map_k8.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/pp/relic_pp_norm.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/rand/relic_rand_core.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/rand/relic_rand_hashd.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/relic_conf.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/relic_core.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/relic_err.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/relic_util.c">
+			<Option target="relic_s"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/python-bindings/pythonbindings.cpp">
+			<Option target="blspy"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/bls.cpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/bls.hpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/elements.cpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/elements.hpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/hdkeys.hpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/hkdf.hpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/privatekey.cpp">
+			<Option target="bls"/>
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/privatekey.hpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/schemes.cpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/schemes.hpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/test-bench.cpp">
+			<Option target="runbench"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/test-utils.hpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/test.cpp">
+			<Option target="runtest"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/util.hpp">
+			<Option target="blstmp"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake_modules/Findgmp.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake_modules/Findsodium.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/arch.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/bn.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/cp.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/eb.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/ec.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/ed.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/ep.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/err.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/fb.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/fp.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/fpx.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/md.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/pp.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/rand.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/cmake/with.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/include/relic_conf.h.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\include\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\relic-src\src\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\pybind11-src\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/tools/FindPythonLibsNew.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\pybind11-src\tools\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/tools/pybind11Common.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\pybind11-src\tools\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/pybind11-src/tools/pybind11Tools.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\pybind11-src\tools\"/>
+		</Unit>
+		<Unit filename="/Users/zhuanghanchen/sandbox/chia/bls-signatures/python-bindings/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\python-bindings\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
