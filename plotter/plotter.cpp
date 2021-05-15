@@ -134,24 +134,30 @@ int main(int argc, char *argv[]) try {
         HexToBytes(memo, memo_bytes.data());
         HexToBytes(id, id_bytes.data());
 
-        DiskPlotter plotter = DiskPlotter();
-        plotter.CreatePlotDisk(
-                tempdir,
-                tempdir2,
-                finaldir,
-                filename,
-                k,
-                memo_bytes.data(),
-                memo_bytes.size(),
-                id_bytes.data(),
-                id_bytes.size(),
-                buffmegabytes,
-                num_buckets,
-                num_stripes,
-                num_threads,
-                nobitfield,
-                show_progress);
-    }
+        cout << "tempdir=" << tempdir << ";tempdir2=" << tempdir2 << ";finaldir=" << finaldir << ";k=" \
+             << static_cast<char>(k) << ";memo=" << memo << ";id=" << id << ";buffmegabytes=" \
+             << static_cast<char>(buffmegabytes) << ";num_buckets=" << static_cast<char>(num_buckets) \
+             << ";num_stripes" << static_cast<char>(num_stripes) << ";num_threads=" \
+             << static_cast<char>(num_threads) << ";nobitfield=" << static_cast<char>(nobitfield) \
+             << ";show_progress=" << static_cast<char>(show_progress) << endl;
+//        DiskPlotter plotter = DiskPlotter();
+//        plotter.CreatePlotDisk(
+//                tempdir,
+//                tempdir2,
+//                finaldir,
+//                filename,
+//                k,
+//                memo_bytes.data(),
+//                memo_bytes.size(),
+//                id_bytes.data(),
+//                id_bytes.size(),
+//                buffmegabytes,
+//                num_buckets,
+//                num_stripes,
+//                num_threads,
+//                nobitfield,
+//                show_progress);
+//    }
     return 0;
 } catch (const cxxopts::OptionException &e) {
     cout << "error parsing options: " << e.what() << endl;
