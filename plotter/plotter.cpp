@@ -133,19 +133,26 @@ int main(int argc, char *argv[]) try {
 
         HexToBytes(memo, memo_bytes.data());
         HexToBytes(id, id_bytes.data());
-//        std::string kStr( (char *) k);
+        std::stringstream ss;
+        ss << static_cast<int>(k);
+        std::string kStr;
+        ss >> kStr;
+        time_t timep;
+        time (&timep);
+        char dt_string[64];
+        strftime(dt_string, sizeof(dt_string), "%Y-%m-%d-%H-%M",localtime(&timep) );
 //        std::string idStr((char *) id_bytes.data());
-//        filename = "plot-k"+kStr+"-"+ idStr +".plot";
+        filename = "plot-k"+kStr+"-"+dt_string+"-"+ id +".plot";
         cout << "tempdir=" << tempdir << ";tempdir2=" << tempdir2 << ";finaldir=" << finaldir << ";k=" \
              << static_cast<int>(k) << ";memo=" << memo << ";id=" << id << ";buffmegabytes=" \
              << static_cast<int>(buffmegabytes) << ";num_buckets=" << static_cast<int>(num_buckets) \
              << ";num_stripes" << static_cast<int>(num_stripes) << ";num_threads=" \
              << static_cast<int>(num_threads) << ";nobitfield=" << static_cast<bool>(nobitfield) \
-             << ";show_progress=" << static_cast<bool>(show_progress) << endl;
+             << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename << endl;
 //        DiskPlotter plotter = DiskPlotter();
 //        plotter.CreatePlotDisk(
 //                tempdir,
-//                tempdir2,
+//                tempdir,
 //                finaldir,
 //                filename,
 //                k,
