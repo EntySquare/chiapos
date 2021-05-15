@@ -159,7 +159,7 @@ int main(int argc, char *argv[]) try {
 //                num_threads,
 //                nobitfield,
 //                show_progress);
-//    }
+    }
     return 0;
 } catch (const cxxopts::OptionException &e) {
     cout << "error parsing options: " << e.what() << endl;
