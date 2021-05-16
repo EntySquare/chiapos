@@ -193,15 +193,6 @@ try {
             msg_id.end(), poolPublicKey.Serialize().begin(), poolPublicKey.Serialize().end());
         msg_id.insert(
             msg_id.end(), plotPublicKey.Serialize().begin(), plotPublicKey.Serialize().end());
-        if (id.size() != 64) {
-            cout << "Invalid ID, should be 32 bytes (hex)" << endl;
-            exit(1);
-        }
-        memo = Strip0x(memo);
-        if (memo.size() % 2 != 0) {
-            cout << "Invalid memo, should be only whole bytes (hex)" << endl;
-            exit(1);
-        }
         vector<uint8_t> msg_memo;
         msg_memo.insert(
             msg_memo.end(), poolPublicKey.Serialize().begin(), poolPublicKey.Serialize().end());
@@ -218,6 +209,15 @@ try {
         memo = *byteToHexStr(memo_bytes.data(), static_cast<int>(memo_bytes.size()));
         //        HexToBytes(memo, memo_bytes.data());
         //        HexToBytes(id, id_bytes.data());
+        if (id.size() != 64) {
+            cout << "Invalid ID, should be 32 bytes (hex)" << endl;
+            exit(1);
+        }
+        memo = Strip0x(memo);
+        if (memo.size() % 2 != 0) {
+            cout << "Invalid memo, should be only whole bytes (hex)" << endl;
+            exit(1);
+        }
         std::stringstream ss;
         ss << static_cast<int>(k);
         std::string kStr;
