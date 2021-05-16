@@ -209,7 +209,7 @@ try {
         memo = *byteToHexStr(memo_bytes.data(), static_cast<int>(memo_bytes.size()));
         //        HexToBytes(memo, memo_bytes.data());
         //        HexToBytes(id, id_bytes.data());
-        if (id.size() != 64) {
+        if ((msg_id.size() != 192) || (msg_memo.size() != 288)) {
             cout << "Invalid ID, should be 32 bytes (hex)" << endl;
             exit(1);
         }
