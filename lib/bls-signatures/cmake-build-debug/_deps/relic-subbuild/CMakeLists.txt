@@ -12,8 +12,8 @@ project(relic-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(relic-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/relic-toolkit/relic.git" "GIT_TAG" "1885ae3b681c423c72b65ce1fe70910142cf941c"
-                    SOURCE_DIR          "/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-src"
-                    BINARY_DIR          "/Users/zhuanghanchen/sandbox/chia/bls-signatures/cmake-build-debug/_deps/relic-build"
+                    SOURCE_DIR          "/Users/luo/Documents/chia/chiapos/lib/bls-signatures/cmake-build-debug/_deps/relic-src"
+                    BINARY_DIR          "/Users/luo/Documents/chia/chiapos/lib/bls-signatures/cmake-build-debug/_deps/relic-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""
