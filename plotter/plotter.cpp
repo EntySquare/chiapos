@@ -66,6 +66,34 @@ string Strip0x(const string &hex)
     return hex;
 }
 
+string *byteToHexStr(unsigned char byte_arr[], int arr_len)
+{
+    string *hexstr = new string();
+    for (int i = 0; i < arr_len; i++) {
+        char hex1;
+        char hex2;
+        int value = byte_arr[i];  //直接将unsigned char赋值给整型的值，系统会正动强制转换
+        int v1 = value / 16;
+        int v2 = value % 16;
+
+        //将商转成字母
+        if (v1 >= 0 && v1 <= 9)
+            hex1 = (char)(48 + v1);
+        else
+            hex1 = (char)(55 + v1);
+
+        //将余数转成字母
+        if (v2 >= 0 && v2 <= 9)
+            hex2 = (char)(48 + v2);
+        else
+            hex2 = (char)(55 + v2);
+
+        //将字母连接成串
+        *hexstr = *hexstr + hex1 + hex2;
+    }
+    return hexstr;
+}
+
 void HelpAndQuit(cxxopts::Options options)
 {
     cout << options.help({""}) << endl;
@@ -174,21 +202,20 @@ try {
             cout << "Invalid memo, should be only whole bytes (hex)" << endl;
             exit(1);
         }
-        std::vector<uint8_t> memo_bytes(memo.size() / 2);
-        memo_bytes.insert(
-            memo_bytes.end(), poolPublicKey.Serialize().begin(), poolPublicKey.Serialize().end());
-        memo_bytes.insert(
-            memo_bytes.end(),
-            farmerPublicKey.Serialize().begin(),
-            farmerPublicKey.Serialize().end());
-        memo_bytes.insert(memo_bytes.end(), localSk.Serialize().begin(), localSk.Serialize().end());
-        std::array<uint8_t, 32> id_bytes;
+        vector<uint8_t> msg_memo;
+        msg_memo.insert(
+            msg_memo.end(), poolPublicKey.Serialize().begin(), poolPublicKey.Serialize().end());
+        msg_memo.insert(
+            msg_memo.end(), farmerPublicKey.Serialize().begin(), farmerPublicKey.Serialize().end());
+        msg_memo.insert(msg_memo.end(), localSk.Serialize().begin(), localSk.Serialize().end());
+        vector<uint8_t> id_bytes(32);
+        cout << "msg_id_len = " << static_cast<int>(msg_id.size()) << endl;
+        cout << "msg_len = " << static_cast<int>(msg_memo.size()) << endl;
+        vector<uint8_t> memo_bytes(static_cast<int>(msg_memo.size()));
+        memo_bytes = msg_memo;
         bls::Util::Hash256(id_bytes.data(), (const uint8_t *)msg_id.data(), msg_id.size());
-        char *idp = new char[sizeof(id_bytes)];
-        std::memcpy(idp, id_bytes.data(), sizeof(id_bytes));
-        idp[sizeof(id_bytes)] = 0;
-        string idstr(idp);
-        id = idstr;
+        id = *byteToHexStr(id_bytes.data(), static_cast<int>(id_bytes.size()));
+        memo = *byteToHexStr(memo_bytes.data(), static_cast<int>(memo_bytes.size()));
         //        HexToBytes(memo, memo_bytes.data());
         //        HexToBytes(id, id_bytes.data());
         std::stringstream ss;
@@ -202,7 +229,7 @@ try {
         //        std::string idStr((char *) id_bytes.data());
         filename = "plot-k" + kStr + "-" + dt_string + "-" + id + ".plot";
         cout << "tempdir=" << tempdir << ";tempdir2=" << tempdir2 << ";finaldir=" << finaldir
-             << ";k=" << static_cast<int>(k) << ";memo=" << memo_bytes.data() << ";id=" << id
+             << ";k=" << static_cast<int>(k) << ";memo=" << memo << ";id=" << id
              << ";buffmegabytes=" << static_cast<int>(buffmegabytes)
              << ";num_buckets=" << static_cast<int>(num_buckets) << ";num_stripes"
              << static_cast<int>(num_stripes) << ";num_threads=" << static_cast<int>(num_threads)
