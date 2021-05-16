@@ -30,13 +30,15 @@ using std::string;
 using std::vector;
 using namespace bls;
 
-void Random(std::vector<uint8_t> v, int n, int l, int r)  //生成范围在l~r的随机数
+vector<uint8_t> Random(std::vector<uint8_t> v, int n, int l, int r)  //生成范围在l~r的随机数
 {
     srand(time(0));  //设置时间种子
     for (int i = 0; i < n; i++) {
         v.push_back(rand() % (r - l + 1) + l);  //生成区间r~l的随机数
     }
+    return v;
 }
+
 
 void HexToBytes(const string &hex, uint8_t *result)
 {
@@ -135,7 +137,8 @@ try {
              << endl;
         int n = 32;  //数组元素的个数，即生成随机数的个数
         vector<uint8_t> seed;
-        Random(seed, n, 0, 256);
+        seed = Random(seed, n, 0, 256);
+        std::cout << "seed size============="<< seed.size() << std::endl;
         bls::PrivateKey sk = bls::AugSchemeMPL().KeyGen(seed);
         //  The plot public key is the combination of the harvester and farmer keys
         //  The plot id is based on the harvester, farmer, and pool keys

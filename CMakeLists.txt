@@ -141,11 +141,14 @@ add_executable(ProofOfSpace
     ${BLAKE3_SRC}
 )
 
+set(LINK_DIR lib/bls-signatures/build)
+link_directories(${LINK_DIR})
 add_executable(Plotter
-        plotter/plotter.cpp
-        src/chacha8.c
-        ${BLAKE3_SRC}
+    plotter/plotter.cpp
+    src/chacha8.c
+    ${BLAKE3_SRC}
 )
+target_link_libraries(Plotter libbls.a)
 
 add_executable(RunTests
     tests/test-main.cpp
