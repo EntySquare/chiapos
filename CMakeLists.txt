@@ -135,11 +135,11 @@ ENDIF()
 
 #pybind11_add_module(chiapos ${CMAKE_CURRENT_SOURCE_DIR}/python-bindings/chiapos.cpp src/chacha8.c ${BLAKE3_SRC})
 
-add_executable(ProofOfSpace
-    src/cli.cpp
-    src/chacha8.c
-    ${BLAKE3_SRC}
-)
+#add_executable(ProofOfSpace
+#    src/cli.cpp
+#    src/chacha8.c
+#    ${BLAKE3_SRC}
+#)
 
 set(LINK_DIR lib/bls-signatures/build)
 link_directories(${LINK_DIR})
@@ -150,12 +150,12 @@ add_executable(Plotter
 )
 target_link_libraries(Plotter libbls.a)
 
-add_executable(RunTests
-    tests/test-main.cpp
-    tests/test.cpp
-    src/chacha8.c
-    ${BLAKE3_SRC}
-)
+#add_executable(RunTests
+#    tests/test-main.cpp
+#    tests/test.cpp
+#    src/chacha8.c
+#    ${BLAKE3_SRC}
+#)
 
 find_package(Threads REQUIRED)
 
@@ -164,7 +164,7 @@ target_include_directories(uint128 PUBLIC uint128_t)
 
 target_compile_features(fse PUBLIC cxx_std_17)
 #target_compile_features(chiapos PUBLIC cxx_std_17)
-target_compile_features(RunTests PUBLIC cxx_std_17)
+#target_compile_features(RunTests PUBLIC cxx_std_17)
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 #  target_link_libraries(chiapos PRIVATE fse Threads::Threads)
