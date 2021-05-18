@@ -209,6 +209,7 @@ try {
         memo_bytes = msg_memo;
         bls::Util::Hash256(id_bytes.data(), (const uint8_t *)msg_id.data(), msg_id.size());
         id = *byteToHexStr(id_bytes.data(), static_cast<int>(id_bytes.size()));
+        transform(id.begin(), id.end(), id.begin(), ::tolower);
         memo = *byteToHexStr(memo_bytes.data(), static_cast<int>(memo_bytes.size()));
         //        HexToBytes(memo, memo_bytes.data());
         //        HexToBytes(id, id_bytes.data());
@@ -239,23 +240,23 @@ try {
              << ";nobitfield=" << static_cast<bool>(nobitfield)
              << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename
              << endl;
-        DiskPlotter plotter = DiskPlotter();
-        plotter.CreatePlotDisk(
-            tempdir,
-            tempdir,
-            finaldir,
-            filename,
-            k,
-            memo_bytes.data(),
-            memo_bytes.size(),
-            id_bytes.data(),
-            id_bytes.size(),
-            buffmegabytes,
-            num_buckets,
-            num_stripes,
-            num_threads,
-            nobitfield,
-            show_progress);
+        //        DiskPlotter plotter = DiskPlotter();
+        //        plotter.CreatePlotDisk(
+        //            tempdir,
+        //            tempdir,
+        //            finaldir,
+        //            filename,
+        //            k,
+        //            memo_bytes.data(),
+        //            memo_bytes.size(),
+        //            id_bytes.data(),
+        //            id_bytes.size(),
+        //            buffmegabytes,
+        //            num_buckets,
+        //            num_stripes,
+        //            num_threads,
+        //            nobitfield,
+        //            show_progress);
     }
     return 0;
 } catch (const cxxopts::OptionException &e) {
