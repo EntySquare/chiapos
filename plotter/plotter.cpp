@@ -217,6 +217,7 @@ try {
         id = *byteToHexStr(id_bytes.data(), static_cast<int>(id_bytes.size()));
         transform(id.begin(), id.end(), id.begin(), ::tolower);
         memo = *byteToHexStr(memo_bytes.data(), static_cast<int>(memo_bytes.size()));
+        transform(memo.begin(), memo.end(), memo.begin(), ::tolower);
         //        HexToBytes(memo, memo_bytes.data());
         //        HexToBytes(id, id_bytes.data());
         if (id.size() != 64) {
