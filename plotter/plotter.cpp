@@ -186,8 +186,8 @@ try {
         farmerPublicKey = bls::G1Element::FromByteVector(farmerArray);
         std::vector<uint8_t> poolArray(48);
         HexToBytes(pool_public_key, poolArray.data());
-        bls::G1Element poolPublicKey;
-        poolPublicKey = bls::G1Element::FromByteVector(poolArray);
+//        bls::G1Element poolPublicKey;
+//        poolPublicKey = bls::G1Element::FromByteVector(poolArray);
         bls::G1Element plotPublicKey = localSk + farmerPublicKey;
         vector<uint8_t> msg_id;
         msg_id.insert(msg_id.end(), poolArray.begin(), poolArray.end());
