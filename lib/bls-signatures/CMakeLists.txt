@@ -98,6 +98,6 @@ else()
   # emscripten can't build python bindings, it produces only javascript
   # add_subdirectory(contrib/pybind11)
   if (BUILD_BLS_PYTHON_BINDINGS)
-    add_subdirectory(python-bindings)
+#    add_subdirectory(python-bindings)
   endif()
 endif()
