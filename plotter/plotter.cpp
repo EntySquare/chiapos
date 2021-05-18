@@ -167,6 +167,7 @@ try {
         seed = Random(seed, n, 0, 256);
         std::cout << "seed size=============" << seed.size() << std::endl;
         bls::PrivateKey sk = bls::AugSchemeMPL().KeyGen(seed);
+        bls::PrivateKey LocalSk = sk;
         //  The plot public key is the combination of the harvester and farmer keys
         //  The plot id is based on the harvester, farmer, and pool keys
         //  The plot meno : pool_public_key, farmer_public_key, sk
@@ -176,9 +177,9 @@ try {
         derivePath[2] = 3;
         derivePath[3] = 0;
         for (int i = 0; i < 4; i++) {
-            sk = bls::AugSchemeMPL().DeriveChildSk(sk, i);
+            sk = bls::AugSchemeMPL().DeriveChildSk(LocalSk, i);
         }
-        bls::G1Element localSk = sk.GetG1Element();
+        bls::G1Element localSk = LocalSk.GetG1Element();
         std::vector<uint8_t> farmerArray(48);
         HexToBytes(farmer_public_key, farmerArray.data());
         bls::G1Element farmerPublicKey;
@@ -189,23 +190,21 @@ try {
         poolPublicKey = bls::G1Element::FromByteVector(poolArray);
         bls::G1Element plotPublicKey = localSk + farmerPublicKey;
         vector<uint8_t> msg_id;
-        cout << "local_sk_len = " << static_cast<int>(sizeof(localSk)) << endl;
-        cout << "pool_pub_key_len = " << static_cast<int>(sizeof(poolPublicKey)) << endl;
-        cout << "plot_pub_key_len = " << static_cast<int>(sizeof(plotPublicKey)) << endl;
-        cout << "farmer_pub_key_len = " << static_cast<int>(sizeof(farmerPublicKey)) << endl;
-        msg_id.insert(
-            msg_id.end(), poolPublicKey.Serialize().begin(), poolPublicKey.Serialize().end());
+        msg_id.insert(msg_id.end(), poolArray.begin(), poolArray.end());
+        cout << "id_size1 >>>>>> " << static_cast<int>(msg_id.size()) << endl;
+        // TODO fix insert plot_public_key
         msg_id.insert(
             msg_id.end(), plotPublicKey.Serialize().begin(), plotPublicKey.Serialize().end());
+        cout << "id_size2 >>>>>> " << static_cast<int>(msg_id.size()) << endl;
         vector<uint8_t> msg_memo;
-        msg_memo.insert(
-            msg_memo.end(), poolPublicKey.Serialize().begin(), poolPublicKey.Serialize().end());
-        msg_memo.insert(
-            msg_memo.end(), farmerPublicKey.Serialize().begin(), farmerPublicKey.Serialize().end());
-        msg_memo.insert(msg_memo.end(), localSk.Serialize().begin(), localSk.Serialize().end());
+        msg_memo.insert(msg_memo.end(), poolArray.begin(), poolArray.end());
+        cout << "memo_size1 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
+        msg_memo.insert(msg_memo.end(), farmerArray.begin(), farmerArray.end());
+        cout << "memo_size2 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
+        // TODO fix insert sk
+        msg_memo.insert(msg_memo.end(), sk.Serialize().begin(), sk.Serialize().end());
+        cout << "memo_size3 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
         vector<uint8_t> id_bytes(32);
-        cout << "msg_id_len = " << static_cast<int>(msg_id.size()) << endl;
-        cout << "msg_len = " << static_cast<int>(msg_memo.size()) << endl;
         vector<uint8_t> memo_bytes(static_cast<int>(msg_memo.size()));
         memo_bytes = msg_memo;
         bls::Util::Hash256(id_bytes.data(), (const uint8_t *)msg_id.data(), msg_id.size());
@@ -213,7 +212,7 @@ try {
         memo = *byteToHexStr(memo_bytes.data(), static_cast<int>(memo_bytes.size()));
         //        HexToBytes(memo, memo_bytes.data());
         //        HexToBytes(id, id_bytes.data());
-        if ((msg_id.size() != 192) || (msg_memo.size() != 288)) {
+        if (id.size() != 64) {
             cout << "Invalid ID, should be 32 bytes (hex)" << endl;
             exit(1);
         }
@@ -240,23 +239,23 @@ try {
              << ";nobitfield=" << static_cast<bool>(nobitfield)
              << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename
              << endl;
-                DiskPlotter plotter = DiskPlotter();
-                plotter.CreatePlotDisk(
-                    tempdir,
-                    tempdir,
-                    finaldir,
-                    filename,
-                    k,
-                    memo_bytes.data(),
-                    memo_bytes.size(),
-                    id_bytes.data(),
-                    id_bytes.size(),
-                    buffmegabytes,
-                    num_buckets,
-                    num_stripes,
-                    num_threads,
-                    nobitfield,
-                    show_progress);
+        DiskPlotter plotter = DiskPlotter();
+        plotter.CreatePlotDisk(
+            tempdir,
+            tempdir,
+            finaldir,
+            filename,
+            k,
+            memo_bytes.data(),
+            memo_bytes.size(),
+            id_bytes.data(),
+            id_bytes.size(),
+            buffmegabytes,
+            num_buckets,
+            num_stripes,
+            num_threads,
+            nobitfield,
+            show_progress);
     }
     return 0;
 } catch (const cxxopts::OptionException &e) {
