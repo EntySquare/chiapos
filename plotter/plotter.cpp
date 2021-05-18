@@ -248,23 +248,23 @@ try {
              << ";nobitfield=" << static_cast<bool>(nobitfield)
              << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename
              << endl;
-        //        DiskPlotter plotter = DiskPlotter();
-        //        plotter.CreatePlotDisk(
-        //            tempdir,
-        //            tempdir,
-        //            finaldir,
-        //            filename,
-        //            k,
-        //            memo_bytes.data(),
-        //            memo_bytes.size(),
-        //            id_bytes.data(),
-        //            id_bytes.size(),
-        //            buffmegabytes,
-        //            num_buckets,
-        //            num_stripes,
-        //            num_threads,
-        //            nobitfield,
-        //            show_progress);
+                DiskPlotter plotter = DiskPlotter();
+                plotter.CreatePlotDisk(
+                    tempdir,
+                    tempdir,
+                    finaldir,
+                    filename,
+                    k,
+                    memo_bytes.data(),
+                    memo_bytes.size(),
+                    id_bytes.data(),
+                    id_bytes.size(),
+                    buffmegabytes,
+                    num_buckets,
+                    num_stripes,
+                    num_threads,
+                    nobitfield,
+                    show_progress);
     }
     return 0;
 } catch (const cxxopts::OptionException &e) {
