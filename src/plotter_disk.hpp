@@ -51,6 +51,7 @@
 #include "pos_constants.hpp"
 #include "sort_manager.hpp"
 #include "util.hpp"
+#include "plotterUtil.cpp"
 
 #define B17PHASE23
 
@@ -213,6 +214,7 @@ public:
             FileDisk tmp2_disk(tmp_2_filename);
 
             assert(id_len == kIdLen);
+
             //HTTP 请求告诉服务～
             HttpRequest* Http;
             char http_return[4096] = {0};

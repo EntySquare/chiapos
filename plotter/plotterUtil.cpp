@@ -58,20 +58,20 @@ std::string GenTimeNow()
     return ts;
 }
 
-std::double_t GetElapsed() const
-{
-    auto end = std::chrono::steady_clock::now();
-    auto wall_clock_ms =
-        std::chrono::duration_cast<std::chrono::milliseconds>(end - this->wall_clock_time_start_)
-            .count();
-    double cpu_time_ms =
-        1000.0 * (static_cast<double>(clock()) - this->cpu_time_start_) / CLOCKS_PER_SEC;
-    double cpu_ratio = static_cast<int>(10000 * (cpu_time_ms / wall_clock_ms)) / 100.0;
-
-    return (wall_clock_ms / 1000.0);
-    std::cout << name << " " << (wall_clock_ms / 1000.0) << " seconds. CPU (" << cpu_ratio << "%) "
-              << Timer::GetNow();
-}
+//std::double_t GetElapsed(const std::string &name) const
+//{
+//    auto end = std::chrono::steady_clock::now();
+//    auto wall_clock_ms =
+//        std::chrono::duration_cast<std::chrono::milliseconds>(end - this->wall_clock_time_start_)
+//            .count();
+//    double cpu_time_ms =
+//        1000.0 * (static_cast<double>(clock()) - this->cpu_time_start_) / CLOCKS_PER_SEC;
+//    double cpu_ratio = static_cast<int>(10000 * (cpu_time_ms / wall_clock_ms)) / 100.0;
+//
+//    return (wall_clock_ms / 1000.0);
+//    std::cout << name << " " << (wall_clock_ms / 1000.0) << " seconds. CPU (" << cpu_ratio << "%) "
+//              << Timer::GetNow();
+//}
 
 int main()
 {
