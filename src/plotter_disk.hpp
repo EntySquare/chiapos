@@ -17,6 +17,10 @@
 
 #ifndef _WIN32
 #include <semaphore.h>
+#include <sys/socket.h> //http包引入
+#include <string.h>     //http包引入
+#include "HttpReq.h"    //http包引入
+#include <iostream>     //http包引入
 #include <sys/resource.h>
 #include <unistd.h>
 #endif
@@ -209,7 +213,16 @@ public:
             FileDisk tmp2_disk(tmp_2_filename);
 
             assert(id_len == kIdLen);
-
+            //HTTP 请求告诉服务～
+            HttpRequest* Http;
+            char http_return[4096] = {0};
+            char http_msg[4096] = {0};
+            std::string a = "http://127.0.0.1:8001/ReportChart?hash=" + filename + "&p=1";
+            std::strcpy(http_msg, a.data());
+            if(Http->HttpGet(http_msg, http_return)){
+                std::cout << http_return << std::endl;
+            }
+            //HTTP 请求告诉服务～
             std::cout << std::endl
                       << "Starting phase 1/4: Forward Propagation into tmp files... "
                       << Timer::GetNow();

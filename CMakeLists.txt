@@ -150,11 +150,17 @@ add_executable(Plotter
 )
 target_link_libraries(Plotter libbls.a)
 
+
 add_executable(RunTests
     tests/test-main.cpp
     tests/test.cpp
     src/chacha8.c
     ${BLAKE3_SRC}
+)
+add_executable(HttpTest
+        plotter/http_test.cpp
+        src/chacha8.c
+        ${BLAKE3_SRC}
 )
 
 find_package(Threads REQUIRED)
