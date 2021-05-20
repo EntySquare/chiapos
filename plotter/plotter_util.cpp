@@ -1,3 +1,6 @@
+//
+// Created by Nate Yang on 2021/5/21.
+//
 #include <sys/socket.h>
 #include <fstream>
 #include <iostream>
@@ -50,11 +53,27 @@ std::string GenTimeNow(){
     return ts;
 }
 
+[[nodiscard]] std::double_t GetElapsed() const
+{
+    auto end = std::chrono::steady_clock::now();
+    auto wall_clock_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+        end - this->wall_clock_time_start_)
+        .count();
+    double cpu_time_ms =
+        1000.0 * (static_cast<double>(clock()) - this->cpu_time_start_) / CLOCKS_PER_SEC;
+    double cpu_ratio = static_cast<int>(10000 * (cpu_time_ms / wall_clock_ms)) / 100.0;
+
+    return (wall_clock_ms / 1000.0);
+    //        std::cout << name << " " << (wall_clock_ms / 1000.0) << " seconds. CPU (" <<
+    //        cpu_ratio
+    //                  << "%) " << Timer::GetNow();
+}
+
 int main()
 {
     Timer p1;
     // HTTP 请求告诉服务～
-    sleep(3);
+    //sleep(3);
 //    std::double_t duringTime = 0;
 //    if (p1.GetElapsed() != 0) {
 //        duringTime = p1.GetElapsed();
