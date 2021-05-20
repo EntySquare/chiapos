@@ -2,16 +2,19 @@
 // Created by Nate Yang on 2021/5/21.
 //
 #include <sys/socket.h>
+
+#include <cstdio>
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <util.hpp>
-#include <cstdlib>
-#include <cstdio>
+
 #include "HttpReq.h"
 
 time_t StrTime2unix(const std::string& ts)
 {
-    struct tm tm{};
+    struct tm tm {
+    };
     memset(&tm, 0, sizeof(tm));
 
     sscanf(
@@ -30,16 +33,18 @@ time_t StrTime2unix(const std::string& ts)
     return mktime(&tm);
 }
 
-std::string GetEnv(const char* envName){
+std::string GetEnv(const char* envName)
+{
     char* podName = new char[0];
-    //podName = getenv("HOME");
-    if (getenv(envName) != nullptr){
+    // podName = getenv("HOME");
+    if (getenv(envName) != nullptr) {
         podName = getenv(envName);
     }
     return podName;
 }
 
-std::string GenTimeNow(){
+std::string GenTimeNow()
+{
     time_t t = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     std::stringstream ss;
     ss << std::put_time(std::localtime(&t), "%F %X");
@@ -53,34 +58,33 @@ std::string GenTimeNow(){
     return ts;
 }
 
-[[nodiscard]] std::double_t GetElapsed() const
+std::double_t GetElapsed() const
 {
     auto end = std::chrono::steady_clock::now();
-    auto wall_clock_ms = std::chrono::duration_cast<std::chrono::milliseconds>(
-        end - this->wall_clock_time_start_)
-        .count();
+    auto wall_clock_ms =
+        std::chrono::duration_cast<std::chrono::milliseconds>(end - this->wall_clock_time_start_)
+            .count();
     double cpu_time_ms =
         1000.0 * (static_cast<double>(clock()) - this->cpu_time_start_) / CLOCKS_PER_SEC;
     double cpu_ratio = static_cast<int>(10000 * (cpu_time_ms / wall_clock_ms)) / 100.0;
 
     return (wall_clock_ms / 1000.0);
-    //        std::cout << name << " " << (wall_clock_ms / 1000.0) << " seconds. CPU (" <<
-    //        cpu_ratio
-    //                  << "%) " << Timer::GetNow();
+    std::cout << name << " " << (wall_clock_ms / 1000.0) << " seconds. CPU (" << cpu_ratio << "%) "
+              << Timer::GetNow();
 }
 
 int main()
 {
     Timer p1;
     // HTTP 请求告诉服务～
-    //sleep(3);
-//    std::double_t duringTime = 0;
-//    if (p1.GetElapsed() != 0) {
-//        duringTime = p1.GetElapsed();
-//    }
-//    std::cout << "time ============" << duringTime << "s" << std::endl;
-//    std::ostringstream strDurTime;
-//    strDurTime << duringTime;
+    // sleep(3);
+    //    std::double_t duringTime = 0;
+    //    if (p1.GetElapsed() != 0) {
+    //        duringTime = p1.GetElapsed();
+    //    }
+    //    std::cout << "time ============" << duringTime << "s" << std::endl;
+    //    std::ostringstream strDurTime;
+    //    strDurTime << duringTime;
     HttpRequest* Http;
     char http_return[4096] = {0};
     char http_msg[4096] = {0};
