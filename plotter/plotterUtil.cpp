@@ -94,7 +94,7 @@ void ReportHttp(const std::string pNum)
     // get env
     std::string pod = GetEnv("JOB_POD_NAME");
     std::string node = GetEnv("JOB_NODE_NAME");
-    std::string a = "http://10.1.64.143:8001/ReportChart?pod=" + pod + "&node=" + node+"&p="+pNum;
+    std::string a = "http://10.1.64.143:8008/ReportChart?pod=" + pod + "&node=" + node+"&p="+pNum;
     std::strcpy(http_msg, a.data());
     if (Http->HttpGet(http_msg, http_return)) {
         std::cout << "get" << http_return << std::endl;
