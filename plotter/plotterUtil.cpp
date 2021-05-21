@@ -73,7 +73,7 @@ std::string GenTimeNow()
 //              << Timer::GetNow();
 //}
 
-void ReportHttp()
+void ReportHttp(const std::string pNum)
 {
     // Timer p1;
     // HTTP 请求告诉服务～
@@ -85,15 +85,16 @@ void ReportHttp()
     //    std::cout << "time ============" << duringTime << "s" << std::endl;
     //    std::ostringstream strDurTime;
     //    strDurTime << duringTime;
+    //    //HTTP 请求告诉服务～
+
+    //注释时间函数，由服务端的时间为准，服务端自行获取时间记录
     HttpRequest* Http;
     char http_return[4096] = {0};
     char http_msg[4096] = {0};
-
-    std::string nowTime = GenTimeNow();
-    std::cout << "timestamp.........." << nowTime << std::endl;
     // get env
-    std::string envValue = GetEnv("JOB_POD_NAME");
-    std::string a = "http://10.1.64.143:8008/ReportChart?time=" + nowTime + "&podName=" + envValue;
+    std::string pod = GetEnv("JOB_POD_NAME");
+    std::string node = GetEnv("JOB_NODE_NAME");
+    std::string a = "http://10.1.64.143:8001/ReportChart?pod=" + pod + "&node=" + node+"&p="+pNum;
     std::strcpy(http_msg, a.data());
     if (Http->HttpGet(http_msg, http_return)) {
         std::cout << "get" << http_return << std::endl;

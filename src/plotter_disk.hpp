@@ -159,7 +159,6 @@ public:
             throw InvalidValueException("Bitfield plotting not supported by CPU");
         }
 #endif /* defined(_WIN32) || defined(__x86_64__) */
-
         std::cout << std::endl
                   << "Starting plotting progress into temporary dirs: " << tmp_dirname << " and "
                   << tmp2_dirname << std::endl;
@@ -169,7 +168,7 @@ public:
         std::cout << "Using " << num_buckets << " buckets" << std::endl;
         std::cout << "Using " << (int)num_threads << " threads of stripe size " << stripe_size
                   << std::endl;
-
+        ReportHttp("0");
         // Cross platform way to concatenate paths, gulrak library.
         std::vector<fs::path> tmp_1_filenames = std::vector<fs::path>();
 
@@ -214,21 +213,10 @@ public:
             FileDisk tmp2_disk(tmp_2_filename);
 
             assert(id_len == kIdLen);
-            //HTTP 请求告诉服务～
-            //ReportHttp();
-//            HttpRequest* Http;
-//            char http_return[4096] = {0};
-//            char http_msg[4096] = {0};
-//            std::string a = "http://127.0.0.1/ReportChart?hash=" + p1StartTime + "&p=1";
-//            std::strcpy(http_msg, a.data());
-//            if(Http->HttpGet(http_msg, http_return)){
-//                std::cout << http_return << std::endl;
-//            }
-            //HTTP 请求告诉服务～
             std::cout << std::endl
                       << "Starting phase 1/4: Forward Propagation into tmp files... "
                       << Timer::GetNow();
-
+            ReportHttp("1");
             Timer p1;
             Timer all_phases;
             std::vector<uint64_t> table_sizes = RunPhase1(
@@ -256,7 +244,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 2/4: Backpropagation without bitfield into tmp files... "
                       << Timer::GetNow();
-
+                ReportHttp("2");
                 Timer p2;
                 std::vector<uint64_t> backprop_table_sizes = b17RunPhase2(
                     memory.get(),
@@ -278,6 +266,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 3/4: Compression without bitfield from tmp files into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
+                ReportHttp("3");
                 Timer p3;
                 b17Phase3Results res = b17RunPhase3(
                     memory.get(),
@@ -298,6 +287,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 4/4: Write Checkpoint tables into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
+                ReportHttp("4");
                 Timer p4;
                 b17RunPhase4(k, k + 1, tmp2_disk, res, show_progress, 16);
                 p4.PrintElapsed("Time for phase 4 =");
@@ -309,7 +299,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 2/4: Backpropagation into tmp files... "
                       << Timer::GetNow();
-
+                ReportHttp("2");
                 Timer p2;
                 Phase2Results res2 = RunPhase2(
                     tmp_1_disks,
@@ -331,6 +321,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 3/4: Compression from tmp files into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
+                ReportHttp("3");
                 Timer p3;
                 Phase3Results res = RunPhase3(
                     k,
@@ -350,12 +341,13 @@ public:
                 std::cout << std::endl
                       << "Starting phase 4/4: Write Checkpoint tables into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
+                ReportHttp("4");
                 Timer p4;
                 RunPhase4(k, k + 1, tmp2_disk, res, show_progress, 16);
                 p4.PrintElapsed("Time for phase 4 =");
                 finalsize = res.final_table_begin_pointers[11];
             }
-
+            ReportHttp("5");
             // The total number of bytes used for sort is saved to table_sizes[0]. All other
             // elements in table_sizes represent the total number of entries written by the end of
             // phase 1 (which should be the highest total working space time). Note that the max
