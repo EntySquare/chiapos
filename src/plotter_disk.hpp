@@ -214,16 +214,16 @@ public:
             FileDisk tmp2_disk(tmp_2_filename);
 
             assert(id_len == kIdLen);
-
             //HTTP 请求告诉服务～
-            HttpRequest* Http;
-            char http_return[4096] = {0};
-            char http_msg[4096] = {0};
-            std::string a = "http://127.0.0.1:8001/ReportChart?hash=" + filename + "&p=1";
-            std::strcpy(http_msg, a.data());
-            if(Http->HttpGet(http_msg, http_return)){
-                std::cout << http_return << std::endl;
-            }
+            //ReportHttp();
+//            HttpRequest* Http;
+//            char http_return[4096] = {0};
+//            char http_msg[4096] = {0};
+//            std::string a = "http://127.0.0.1/ReportChart?hash=" + p1StartTime + "&p=1";
+//            std::strcpy(http_msg, a.data());
+//            if(Http->HttpGet(http_msg, http_return)){
+//                std::cout << http_return << std::endl;
+//            }
             //HTTP 请求告诉服务～
             std::cout << std::endl
                       << "Starting phase 1/4: Forward Propagation into tmp files... "
@@ -304,6 +304,8 @@ public:
                 finalsize = res.final_table_begin_pointers[11];
             }
             else {
+                //HTTP 请求告诉服务～
+                //ReportHttp();
                 std::cout << std::endl
                       << "Starting phase 2/4: Backpropagation into tmp files... "
                       << Timer::GetNow();
@@ -324,7 +326,8 @@ public:
 
                 // Now we open a new file, where the final contents of the plot will be stored.
                 uint32_t header_size = WriteHeader(tmp2_disk, k, id, memo, memo_len);
-
+                //HTTP 请求告诉服务～
+                //ReportHttp();
                 std::cout << std::endl
                       << "Starting phase 3/4: Compression from tmp files into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
@@ -342,7 +345,8 @@ public:
                     log_num_buckets,
                     show_progress);
                 p3.PrintElapsed("Time for phase 3 =");
-
+                //HTTP 请求告诉服务～
+                //ReportHttp();
                 std::cout << std::endl
                       << "Starting phase 4/4: Write Checkpoint tables into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
@@ -395,6 +399,8 @@ public:
                     std::cout << "Renamed final file from " << tmp_2_filename << " to "
                               << final_filename << std::endl;
                 }
+                //HTTP 请求告诉服务～
+                //ReportHttp();
             } else {
                 if (!bCopied) {
                     fs::copy(

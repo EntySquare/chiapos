@@ -73,9 +73,9 @@ std::string GenTimeNow()
 //              << Timer::GetNow();
 //}
 
-int main()
+void ReportHttp()
 {
-    Timer p1;
+    // Timer p1;
     // HTTP 请求告诉服务～
     // sleep(3);
     //    std::double_t duringTime = 0;
@@ -89,15 +89,14 @@ int main()
     char http_return[4096] = {0};
     char http_msg[4096] = {0};
 
-    std::string ts = GenTimeNow();
-    std::cout << "timestamp.........." << ts << std::endl;
+    std::string nowTime = GenTimeNow();
+    std::cout << "timestamp.........." << nowTime << std::endl;
     // get env
     std::string envValue = GetEnv("JOB_POD_NAME");
-    std::string a = "http://127.0.0.1:8001/ReportChart?time=" + ts + "&podName=" + envValue;
+    std::string a = "http://10.1.64.143:8008/ReportChart?time=" + nowTime + "&podName=" + envValue;
     std::strcpy(http_msg, a.data());
     if (Http->HttpGet(http_msg, http_return)) {
         std::cout << "get" << http_return << std::endl;
     }
     //    //HTTP 请求告诉服务～
-    return 0;
 }
