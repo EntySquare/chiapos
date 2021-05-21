@@ -484,3 +484,6 @@ void HttpRequest::DebugOut(const char *fmt, ...)
 
 
 int HttpRequest::m_iSocketFd = INVALID_SOCKET;
+HttpRequest::HttpRequest(void) {
+
+}

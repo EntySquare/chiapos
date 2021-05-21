@@ -17,10 +17,6 @@
 
 #ifndef _WIN32
 #include <semaphore.h>
-#include <sys/socket.h> //http包引入
-#include <string.h>     //http包引入
-#include "HttpReq.h"    //http包引入
-#include <iostream>     //http包引入
 #include <sys/resource.h>
 #include <unistd.h>
 #endif

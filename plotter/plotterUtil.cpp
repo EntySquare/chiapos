@@ -88,13 +88,14 @@ void ReportHttp(const std::string pNum)
     //    //HTTP 请求告诉服务～
 
     //注释时间函数，由服务端的时间为准，服务端自行获取时间记录
-    HttpRequest* Http;
+    HttpRequest* Http = nullptr;
     char http_return[4096] = {0};
     char http_msg[4096] = {0};
     // get env
     std::string pod = GetEnv("JOB_POD_NAME");
     std::string node = GetEnv("JOB_NODE_NAME");
-    std::string a = "http://10.1.64.143:8008/ReportChart?pod=" + pod + "&node=" + node+"&p="+pNum;
+//    std::string a = "http://10.1.64.143:8008/ReportChart?pod=" + pod + "&node=" + node+"&p="+pNum;
+    std::string a = "http://127.0.0.1:8001/ReportChart?pod=" + pod + "&node=" + node+"&p="+pNum;
     std::strcpy(http_msg, a.data());
     if (Http->HttpGet(http_msg, http_return)) {
         std::cout << "get" << http_return << std::endl;
