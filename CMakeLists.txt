@@ -151,6 +151,12 @@ add_executable(Plotter
 target_link_libraries(Plotter libbls.a)
 
 
+add_executable(PlotterTest
+        plotter/plotter_test.cpp
+        src/chacha8.c
+        ${BLAKE3_SRC}
+)
+target_link_libraries(PlotterTest libbls.a)
 
 add_executable(HttpTest
         plotter/http_test.cpp
@@ -177,6 +183,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 #  target_link_libraries(chiapos PRIVATE fse Threads::Threads)
 #  target_link_libraries(ProofOfSpace fse Threads::Threads)
   target_link_libraries(Plotter fse Threads::Threads)
+  target_link_libraries(PlotterTest fse Threads::Threads)
 #  target_link_libraries(RunTests fse Threads::Threads)
 elseif (${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
 #  target_link_libraries(chiapos PRIVATE fse Threads::Threads)
@@ -194,6 +201,7 @@ else()
 #  target_link_libraries(chiapos PRIVATE fse stdc++fs Threads::Threads)
 #  target_link_libraries(ProofOfSpace fse stdc++fs Threads::Threads)
   target_link_libraries(Plotter fse stdc++fs Threads::Threads)
+  target_link_libraries(PlotterTest fse stdc++fs Threads::Threads)
 #  target_link_libraries(RunTests fse stdc++fs Threads::Threads)
 endif()
 
