@@ -62,6 +62,7 @@ public:
         std::string tmp2_dirname,
         std::string final_dirname,
         std::string filename,
+        std::string entyctl_api_url,
         uint8_t k,
         const uint8_t* memo,
         uint32_t memo_len,
@@ -79,6 +80,7 @@ public:
         struct rlimit the_limit = {600, 600};
         if (-1 == setrlimit(RLIMIT_NOFILE, &the_limit)) {
             std::cout << "setrlimit failed" << std::endl;
+            std::cout << entyctl_api_url << std::endl;
         }
 #endif
         if (k < kMinPlotSize || k > kMaxPlotSize) {
@@ -164,7 +166,7 @@ public:
         std::cout << "Using " << num_buckets << " buckets" << std::endl;
         std::cout << "Using " << (int)num_threads << " threads of stripe size " << stripe_size
                   << std::endl;
-        ReportHttp("0");
+        ReportHttp("0",entyctl_api_url);
         // Cross platform way to concatenate paths, gulrak library.
         std::vector<fs::path> tmp_1_filenames = std::vector<fs::path>();
 
@@ -212,7 +214,7 @@ public:
             std::cout << std::endl
                       << "Starting phase 1/4: Forward Propagation into tmp files... "
                       << Timer::GetNow();
-            ReportHttp("1");
+            ReportHttp("1",entyctl_api_url);
             Timer p1;
             Timer all_phases;
             std::vector<uint64_t> table_sizes = RunPhase1(
@@ -240,7 +242,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 2/4: Backpropagation without bitfield into tmp files... "
                       << Timer::GetNow();
-                ReportHttp("2");
+                ReportHttp("2",entyctl_api_url);
                 Timer p2;
                 std::vector<uint64_t> backprop_table_sizes = b17RunPhase2(
                     memory.get(),
@@ -262,7 +264,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 3/4: Compression without bitfield from tmp files into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
-                ReportHttp("3");
+                ReportHttp("3",entyctl_api_url);
                 Timer p3;
                 b17Phase3Results res = b17RunPhase3(
                     memory.get(),
@@ -283,7 +285,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 4/4: Write Checkpoint tables into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
-                ReportHttp("4");
+                ReportHttp("4",entyctl_api_url);
                 Timer p4;
                 b17RunPhase4(k, k + 1, tmp2_disk, res, show_progress, 16);
                 p4.PrintElapsed("Time for phase 4 =");
@@ -295,7 +297,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 2/4: Backpropagation into tmp files... "
                       << Timer::GetNow();
-                ReportHttp("2");
+                ReportHttp("2",entyctl_api_url);
                 Timer p2;
                 Phase2Results res2 = RunPhase2(
                     tmp_1_disks,
@@ -317,7 +319,7 @@ public:
                 std::cout << std::endl
                       << "Starting phase 3/4: Compression from tmp files into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
-                ReportHttp("3");
+                ReportHttp("3",entyctl_api_url);
                 Timer p3;
                 Phase3Results res = RunPhase3(
                     k,
@@ -337,13 +339,13 @@ public:
                 std::cout << std::endl
                       << "Starting phase 4/4: Write Checkpoint tables into " << tmp_2_filename
                       << " ... " << Timer::GetNow();
-                ReportHttp("4");
+                ReportHttp("4",entyctl_api_url);
                 Timer p4;
                 RunPhase4(k, k + 1, tmp2_disk, res, show_progress, 16);
                 p4.PrintElapsed("Time for phase 4 =");
                 finalsize = res.final_table_begin_pointers[11];
             }
-            ReportHttp("5");
+            ReportHttp("5",entyctl_api_url);
             // The total number of bytes used for sort is saved to table_sizes[0]. All other
             // elements in table_sizes represent the total number of entries written by the end of
             // phase 1 (which should be the highest total working space time). Note that the max

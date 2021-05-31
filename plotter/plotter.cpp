@@ -115,6 +115,8 @@ try {
     uint32_t num_buckets = 128;
     uint32_t num_stripes = 65536;
     uint8_t num_threads = 2;
+    string rp = "10.1.64.143";
+    string po = "8008";
     string filename = "plot.dat";
     string tempdir = ".";
     string tempdir2 = ".";
@@ -140,6 +142,8 @@ try {
         "P, pool_public_key", "Pool Public Key", cxxopts::value<string>(pool_public_key))(
         "m, memo", "Memo to insert into the plot", cxxopts::value<string>(memo))(
         "i, id", "Unique 32-byte seed for the plot", cxxopts::value<string>(id))(
+        "rp", "entyctl api ip string", cxxopts::value<string>(rp))(
+        "po", "entyctl api port string", cxxopts::value<string>(po))(
         "e, nobitfield", "Disable bitfield", cxxopts::value<bool>(nobitfield))(
         "b, buffer",
         "Megabytes to be used as buffer for sorting and plotting",
@@ -254,6 +258,7 @@ try {
                     tempdir,
                     finaldir,
                     filename,
+                    rp+":"+po,
                     k,
                     memo_bytes.data(),
                     memo_bytes.size(),
