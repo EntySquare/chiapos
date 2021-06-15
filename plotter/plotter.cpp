@@ -119,7 +119,7 @@ try {
     string po = "8008";
     string filename = "plot.dat";
     string tempdir = ".";
-    string tempdir2 = ".";
+    string tempdir2 = "...";
     string finaldir = ".";
     string operation = "help";
     string memo = "0102030405";
@@ -153,7 +153,9 @@ try {
         "help", "Print help");
 
     auto result = options.parse(argc, argv);
-
+    if (tempdir2 == "..." || tempdir2 == "") {
+        tempdir2 = tempdir;
+    }
     if (result.count("help") || argc < 2) {
         HelpAndQuit(options);
     }
@@ -185,8 +187,8 @@ try {
         farmerPublicKey = bls::G1Element::FromByteVector(farmerArray);
         std::vector<uint8_t> poolArray(48);
         HexToBytes(pool_public_key, poolArray.data());
-//        bls::G1Element poolPublicKey;
-//        poolPublicKey = bls::G1Element::FromByteVector(poolArray);
+        //        bls::G1Element poolPublicKey;
+        //        poolPublicKey = bls::G1Element::FromByteVector(poolArray);
         bls::G1Element plotPublicKey = localSk + farmerPublicKey;
         vector<uint8_t> msg_id;
         msg_id.insert(msg_id.end(), poolArray.begin(), poolArray.end());
@@ -247,24 +249,24 @@ try {
              << ";nobitfield=" << static_cast<bool>(nobitfield)
              << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename
              << endl;
-                DiskPlotter plotter = DiskPlotter();
-                plotter.CreatePlotDisk(
-                    tempdir,
-                    tempdir,
-                    finaldir,
-                    filename,
-                    rp+":"+po,
-                    k,
-                    memo_bytes.data(),
-                    memo_bytes.size(),
-                    id_bytes.data(),
-                    id_bytes.size(),
-                    buffmegabytes,
-                    num_buckets,
-                    num_stripes,
-                    num_threads,
-                    nobitfield,
-                    show_progress);
+        DiskPlotter plotter = DiskPlotter();
+        plotter.CreatePlotDisk(
+            tempdir,
+            tempdir2,
+            finaldir,
+            filename,
+            rp + ":" + po,
+            k,
+            memo_bytes.data(),
+            memo_bytes.size(),
+            id_bytes.data(),
+            id_bytes.size(),
+            buffmegabytes,
+            num_buckets,
+            num_stripes,
+            num_threads,
+            nobitfield,
+            show_progress);
     }
     return 0;
 } catch (const cxxopts::OptionException &e) {
