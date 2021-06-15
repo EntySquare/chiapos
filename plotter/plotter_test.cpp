@@ -106,17 +106,15 @@ void HelpAndQuit(cxxopts::Options options)
 
 int main(int argc, char *argv[])
 try {
-    cxxopts::Options options(
-        "ProofOfSpace", "Utility for plotting, generating and verifying proofs of space.");
-    options.positional_help("(create/prove/verify/check) param1 param2 ").show_positional_help();
+//    cxxopts::Options options(
+//        "ProofOfSpace", "Utility for plotting, generating and verifying proofs of space.");
+//    options.positional_help("(create/prove/verify/check) param1 param2 ").show_positional_help();
 
     // Default values
     uint8_t k = 32;
     uint32_t num_buckets = 128;
     uint32_t num_stripes = 65536;
     uint8_t num_threads = 2;
-    string rp = "10.1.64.143";
-    string po = "8008";
     string filename = "plot.dat";
     string tempdir = ".";
     string tempdir2 = ".";
@@ -124,58 +122,61 @@ try {
     string operation = "help";
     string memo = "0102030405";
     string id = "022fb42c08c12de3a6af053880199806532e79515f94e83461612101f9412f9e";
-    string farmer_public_key = "";
-    string pool_public_key = "";
+    string farmer_public_key = "8fbee5308074dfd1ffac91c6bb7ffe3a76ff4b255038309061137d9cee1a5f4104ebae8c7e2ecfb2995ce22f196d5278";
+    string pool_public_key = "89ebcbe6a47d55ed8986ce816f0ebc67a383dd54794e9f064e75b5fcaaec936db18fa8be890cc48ebe85c9d219cb91f7";
     bool nobitfield = false;
     bool show_progress = false;
-    uint32_t buffmegabytes = 3389;
-    options.allow_unrecognised_options().add_options()(
-            "k, size", "Plot size", cxxopts::value<uint8_t>(k))(
-            "r, threads", "Number of threads", cxxopts::value<uint8_t>(num_threads))(
-                "u, buckets", "Number of buckets", cxxopts::value<uint32_t>(num_buckets))(
-            "s, stripes", "Size of stripes", cxxopts::value<uint32_t>(num_stripes))(
-            "t, tempdir", "Temporary directory", cxxopts::value<string>(tempdir))(
-        "2, tempdir2", "Second Temporary directory", cxxopts::value<string>(tempdir2))(
-        "d, finaldir", "Final directory", cxxopts::value<string>(finaldir))(
-        "f, file", "Filename", cxxopts::value<string>(filename))(
-        "F, farmer_public_key", "Farmer Public Key", cxxopts::value<string>(farmer_public_key))(
-        "P, pool_public_key", "Pool Public Key", cxxopts::value<string>(pool_public_key))(
-        "m, memo", "Memo to insert into the plot", cxxopts::value<string>(memo))(
-        "i, id", "Unique 32-byte seed for the plot", cxxopts::value<string>(id))(
-        "rp", "entyctl api ip string", cxxopts::value<string>(rp))(
-        "po", "entyctl api port string", cxxopts::value<string>(po))(
-        "e, nobitfield", "Disable bitfield", cxxopts::value<bool>(nobitfield))(
-        "b, buffer",
-        "Megabytes to be used as buffer for sorting and plotting",
-        cxxopts::value<uint32_t>(buffmegabytes))(
-        "p, progress", "Display progress percentage during plotting",
-        cxxopts::value<bool>(show_progress))(
-        "help", "Print help");
+    uint32_t buffmegabytes = 10000;
+//    options.allow_unrecognised_options().add_options()(
+//            "k, size", "Plot size", cxxopts::value<uint8_t>(k))(
+//            "r, threads", "Number of threads", cxxopts::value<uint8_t>(num_threads))(
+//                "u, buckets", "Number of buckets", cxxopts::value<uint32_t>(num_buckets))(
+//            "s, stripes", "Size of stripes", cxxopts::value<uint32_t>(num_stripes))(
+//            "t, tempdir", "Temporary directory", cxxopts::value<string>(tempdir))(
+//        "2, tempdir2", "Second Temporary directory", cxxopts::value<string>(tempdir2))(
+//        "d, finaldir", "Final directory", cxxopts::value<string>(finaldir))(
+//        "f, file", "Filename", cxxopts::value<string>(filename))(
+//        "F, farmer_public_key", "Farmer Public Key", cxxopts::value<string>(farmer_public_key))(
+//        "P, pool_public_key", "Pool Public Key", cxxopts::value<string>(pool_public_key))(
+//        "m, memo", "Memo to insert into the plot", cxxopts::value<string>(memo))(
+//        "i, id", "Unique 32-byte seed for the plot", cxxopts::value<string>(id))(
+//        "e, nobitfield", "Disable bitfield", cxxopts::value<bool>(nobitfield))(
+//        "b, buffer",
+//        "Megabytes to be used as buffer for sorting and plotting",
+//        cxxopts::value<uint32_t>(buffmegabytes))(
+//        "p, progress", "Display progress percentage during plotting",
+//        cxxopts::value<bool>(show_progress))(
+//        "help", "Print help");
 
-    auto result = options.parse(argc, argv);
+//    auto result = options.parse(argc, argv);
+//
+//    if (result.count("help") || argc < 2) {
+//        HelpAndQuit(options);
+//    }
+//    operation = argv[1];
+//    std::cout << "operation: " << operation << std::endl;
 
-    if (result.count("help") || argc < 2) {
-        HelpAndQuit(options);
-    }
-    operation = argv[1];
-    std::cout << "operation: " << operation << std::endl;
-
-    if (operation == "help") {
-        HelpAndQuit(options);
-    } else if (operation == "create") {
-        cout << "Generating plot for k=" << static_cast<int>(k) << " filename=" << filename
-             << " id=" << id << endl
-             << endl;
+//    if (operation == "help") {
+//        HelpAndQuit(options);
+//    } else if (operation == "create") {
+//        cout << "Generating plot for k=" << static_cast<int>(k) << " filename=" << filename
+//             << " id=" << id << endl
+//             << endl;
         int n = 32;  //数组元素的个数，即生成随机数的个数
         vector<uint8_t> seed;
         seed = Random(seed, n, 0, 256);
-        std::cout << "seed size=============" << seed.size() << std::endl;
+//        std::cout << "seed size=============" << seed.size() << std::endl;
         bls::PrivateKey sk = bls::AugSchemeMPL().KeyGen(seed);
         bls::PrivateKey LocalSk = sk;
         //  The plot public key is the combination of the harvester and farmer keys
         //  The plot id is based on the harvester, farmer, and pool keys
         //  The plot meno : pool_public_key, farmer_public_key, sk
-        for (uint32_t i : {12381, 8444, 3, 0}) {
+        uint32_t derivePath[4];
+        derivePath[0] = 12381;
+        derivePath[1] = 8844;
+        derivePath[2] = 3;
+        derivePath[3] = 0;
+        for (int i = 0; i < 4; i++) {
             LocalSk = bls::AugSchemeMPL().DeriveChildSk(LocalSk, i);
         }
         bls::G1Element localSk = LocalSk.GetG1Element();
@@ -190,25 +191,25 @@ try {
         bls::G1Element plotPublicKey = localSk + farmerPublicKey;
         vector<uint8_t> msg_id;
         msg_id.insert(msg_id.end(), poolArray.begin(), poolArray.end());
-        cout << "id_size1 >>>>>> " << static_cast<int>(msg_id.size()) << endl;
+//        cout << "id_size1 >>>>>> " << static_cast<int>(msg_id.size()) << endl;
         // TODO fix insert plot_public_key
-        cout << "plot_public_key_size >>>>>> " << static_cast<int>(sizeof(plotPublicKey)) << endl;
+//        cout << "plot_public_key_size >>>>>> " << static_cast<int>(sizeof(plotPublicKey)) << endl;
         vector<uint8_t> PlotPKBuffer(sizeof(plotPublicKey));
         std::memcpy(PlotPKBuffer.data(), plotPublicKey.Serialize().data(), sizeof(plotPublicKey));
         msg_id.insert(msg_id.end(), PlotPKBuffer.begin(), PlotPKBuffer.end());
-        cout << "id_size2 >>>>>> " << static_cast<int>(msg_id.size()) << endl;
+//        cout << "id_size2 >>>>>> " << static_cast<int>(msg_id.size()) << endl;
         vector<uint8_t> msg_memo;
         msg_memo.insert(msg_memo.end(), poolArray.begin(), poolArray.end());
-        cout << "memo_size1 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
+//        cout << "memo_size1 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
         msg_memo.insert(msg_memo.end(), farmerArray.begin(), farmerArray.end());
-        cout << "memo_size2 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
+//        cout << "memo_size2 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
         // TODO fix insert sk
         uint8_t skBuffer[32];
         sk.Serialize(skBuffer);
         vector<uint8_t> SkBuffer(32);
         std::memcpy(SkBuffer.data(), skBuffer, SkBuffer.size());
         msg_memo.insert(msg_memo.end(), SkBuffer.begin(), SkBuffer.end());
-        cout << "memo_size3 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
+//        cout << "memo_size3 >>>>>> " << static_cast<int>(msg_memo.size()) << endl;
         vector<uint8_t> id_bytes(32);
         vector<uint8_t> memo_bytes(static_cast<int>(msg_memo.size()));
         memo_bytes = msg_memo;
@@ -236,24 +237,24 @@ try {
         time(&timep);
         char dt_string[64];
         strftime(dt_string, sizeof(dt_string), "%Y-%m-%d-%H-%M", localtime(&timep));
-        //        std::string idStr((char *) id_bytes.data());
+                std::string idStr((char *) id_bytes.data());
         filename = "plot-k" + kStr + "-" + dt_string + "-" + id + ".plot";
-        cout << "tempdir=" << tempdir << ";tempdir2=" << tempdir2 << ";finaldir=" << finaldir
-             << ";k=" << static_cast<int>(k) << ";memo=" << memo << ";id=" << id
-             << ";buffmegabytes=" << static_cast<int>(buffmegabytes)
-             << ";num_buckets=" << static_cast<int>(num_buckets)
-             << ";num_stripes=" << static_cast<int>(num_stripes)
-             << ";num_threads=" << static_cast<int>(num_threads)
-             << ";nobitfield=" << static_cast<bool>(nobitfield)
-             << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename
-             << endl;
+//        cout << "tempdir=" << tempdir << ";tempdir2=" << tempdir2 << ";finaldir=" << finaldir
+//             << ";k=" << static_cast<int>(k) << ";memo=" << memo << ";id=" << id
+//             << ";buffmegabytes=" << static_cast<int>(buffmegabytes)
+//             << ";num_buckets=" << static_cast<int>(num_buckets)
+//             << ";num_stripes=" << static_cast<int>(num_stripes)
+//             << ";num_threads=" << static_cast<int>(num_threads)
+//             << ";nobitfield=" << static_cast<bool>(nobitfield)
+//             << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename
+//             << endl;
                 DiskPlotter plotter = DiskPlotter();
                 plotter.CreatePlotDisk(
                     tempdir,
                     tempdir,
                     finaldir,
                     filename,
-                    rp+":"+po,
+                    "127.0.0.1:8008",
                     k,
                     memo_bytes.data(),
                     memo_bytes.size(),
@@ -265,7 +266,7 @@ try {
                     num_threads,
                     nobitfield,
                     show_progress);
-    }
+//    }
     return 0;
 } catch (const cxxopts::OptionException &e) {
     cout << "error parsing options: " << e.what() << endl;
