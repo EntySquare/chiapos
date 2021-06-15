@@ -19,6 +19,7 @@
 
 #include "../lib/bls-signatures/src/bls.hpp"
 #include "../lib/include/picosha2.hpp"
+#include "./util.hpp"
 #include "cxxopts.hpp"
 #include "plotter_disk.hpp"
 #include "prover_disk.hpp"
@@ -104,6 +105,16 @@ void HelpAndQuit(cxxopts::Options options)
     exit(0);
 }
 
+void GetRandomBytes(uint8_t *buf, uint32_t num_bytes)
+{
+    std::random_device rd;
+    std::mt19937 mt(rd());
+    std::uniform_int_distribution<int> dist(0, 255);
+    for (uint32_t i = 0; i < num_bytes; i++) {
+        buf[i] = dist(mt);
+    }
+}
+
 int main(int argc, char *argv[])
 try {
     cxxopts::Options options(
@@ -164,19 +175,16 @@ try {
              << endl;
         int n = 32;  //数组元素的个数，即生成随机数的个数
         vector<uint8_t> seed;
-        seed = Random(seed, n, 0, 256);
+        // seed = Random(seed, n, 0, 256);
+        GetRandomBytes(seed.data(), seed.size());
         std::cout << "seed size=============" << seed.size() << std::endl;
+        std::cout << "seed data=============" << seed.data() << std::endl;
         bls::PrivateKey sk = bls::AugSchemeMPL().KeyGen(seed);
         bls::PrivateKey LocalSk = sk;
         //  The plot public key is the combination of the harvester and farmer keys
         //  The plot id is based on the harvester, farmer, and pool keys
         //  The plot meno : pool_public_key, farmer_public_key, sk
-        uint32_t derivePath[4];
-        derivePath[0] = 12381;
-        derivePath[1] = 8844;
-        derivePath[2] = 3;
-        derivePath[3] = 0;
-        for (int i = 0; i < 4; i++) {
+        for (uint32_t i : {12381, 8444, 3, 0}) {
             LocalSk = bls::AugSchemeMPL().DeriveChildSk(LocalSk, i);
         }
         bls::G1Element localSk = LocalSk.GetG1Element();
@@ -186,8 +194,8 @@ try {
         farmerPublicKey = bls::G1Element::FromByteVector(farmerArray);
         std::vector<uint8_t> poolArray(48);
         HexToBytes(pool_public_key, poolArray.data());
-//        bls::G1Element poolPublicKey;
-//        poolPublicKey = bls::G1Element::FromByteVector(poolArray);
+        //        bls::G1Element poolPublicKey;
+        //        poolPublicKey = bls::G1Element::FromByteVector(poolArray);
         bls::G1Element plotPublicKey = localSk + farmerPublicKey;
         vector<uint8_t> msg_id;
         msg_id.insert(msg_id.end(), poolArray.begin(), poolArray.end());
@@ -248,23 +256,23 @@ try {
              << ";nobitfield=" << static_cast<bool>(nobitfield)
              << ";show_progress=" << static_cast<bool>(show_progress) << ";filename=" << filename
              << endl;
-                DiskPlotter plotter = DiskPlotter();
-                plotter.CreatePlotDisk(
-                    tempdir,
-                    tempdir,
-                    finaldir,
-                    filename,
-                    k,
-                    memo_bytes.data(),
-                    memo_bytes.size(),
-                    id_bytes.data(),
-                    id_bytes.size(),
-                    buffmegabytes,
-                    num_buckets,
-                    num_stripes,
-                    num_threads,
-                    nobitfield,
-                    show_progress);
+        //                DiskPlotter plotter = DiskPlotter();
+        //                plotter.CreatePlotDisk(
+        //                    tempdir,
+        //                    tempdir,
+        //                    finaldir,
+        //                    filename,
+        //                    k,
+        //                    memo_bytes.data(),
+        //                    memo_bytes.size(),
+        //                    id_bytes.data(),
+        //                    id_bytes.size(),
+        //                    buffmegabytes,
+        //                    num_buckets,
+        //                    num_stripes,
+        //                    num_threads,
+        //                    nobitfield,
+        //                    show_progress);
     }
     return 0;
 } catch (const cxxopts::OptionException &e) {
