@@ -215,7 +215,8 @@ try {
         vector<uint8_t> memo_bytes(static_cast<int>(msg_memo.size()));
         memo_bytes = msg_memo;
         bls::Util::Hash256(id_bytes.data(), (const uint8_t *)msg_id.data(), msg_id.size());
-        id = *byteToHexStr(id_bytes.data(), static_cast<int>(id_bytes.size()));
+        id = bls::Util::HexStr(id_bytes.data(), id_bytes.size());
+        //        id = *byteToHexStr(id_bytes.data(), static_cast<int>(id_bytes.size()));
         transform(id.begin(), id.end(), id.begin(), ::tolower);
         memo = *byteToHexStr(memo_bytes.data(), static_cast<int>(memo_bytes.size()));
         transform(memo.begin(), memo.end(), memo.begin(), ::tolower);
